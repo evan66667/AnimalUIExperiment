@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AnimalUIExperiment">
+
+        <!-- 主菜单：APP打开首先进入这个页面，MAIN+LAUNCHER写在这里 -->
+        <activity
+            android:name=".MenuActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 实验1，移除intent‑filter，exported=false，仅内部跳转使用 -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <!-- 其余实验页面注册 -->
+        <activity android:name=".Exp2Activity" android:exported="false"/>
+        <activity android:name=".Exp3Activity" android:exported="false"/>
+        <activity android:name=".Exp4Activity" android:exported="false"/>
+        <activity android:name=".Exp5Activity" android:exported="false"/>
+
+    </application>
+
+</manifest>
